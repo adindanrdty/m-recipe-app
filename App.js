@@ -4,12 +4,24 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import MainScreen from "./src/screens/MainScreen";
 import RecipeDetailScreen from "./src/screens/RecipeDetailScreen";
+import colors from "./src/theme/colors";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{
+      dark: false,
+      colors: {
+        background: colors.background,
+        border: colors.border,
+        card:colors.card,
+        notification: colors.notification,
+        primary: colors.primary,
+        text: colors.text,
+      },
+    }}
+    >
       <Stack.Navigator>
         <Stack.Screen
           name="MainScreen"
